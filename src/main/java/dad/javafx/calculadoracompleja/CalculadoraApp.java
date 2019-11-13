@@ -35,18 +35,24 @@ public class CalculadoraApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		operando11Text = new TextField();
+		operando11Text.setPrefWidth(80);
 		
 		operando12Text = new TextField();
+		operando12Text.setPrefWidth(80);
 		
 		operando21Text = new TextField();
+		operando21Text.setPrefWidth(80);
 		
 		operando22Text = new TextField();
+		operando22Text.setPrefWidth(80);
 		
 		resultado1Text = new TextField();
 		resultado1Text.setDisable(true);
+		resultado1Text.setPrefWidth(80);
 		
 		resultado2Text = new TextField();
 		resultado2Text.setDisable(true);
+		resultado2Text.setPrefWidth(80);
 		
 		operadorCombo = new ComboBox<String>();
 		operadorCombo.getItems().addAll("+","-","*","/");
@@ -59,7 +65,7 @@ public class CalculadoraApp extends Application {
 		hbox3.setAlignment(Pos.CENTER);
 		VBox vbox = new VBox(5, hbox1, hbox2, new Separator(), hbox3);
 		vbox.setAlignment(Pos.CENTER);
-		HBox root = new HBox(15, operadorCombo, vbox);
+		HBox root = new HBox(5, operadorCombo, vbox);
 		root.setAlignment(Pos.CENTER);
 		
 		Bindings.bindBidirectional(operando11Text.textProperty(), operando1.realProperty(), new NumberStringConverter());
@@ -70,9 +76,9 @@ public class CalculadoraApp extends Application {
 		Bindings.bindBidirectional(resultado2Text.textProperty(), resultado.imaginarioProperty(), new NumberStringConverter());
 		operador.bind(operadorCombo.getSelectionModel().selectedItemProperty());
 		
-		Scene scene = new Scene(root, 320, 200);
+		Scene scene = new Scene(root, 400, 200);
 		
-		primaryStage.setTitle("Calculadora");
+		primaryStage.setTitle("Calculadora Compleja");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		

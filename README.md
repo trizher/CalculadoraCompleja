@@ -1,6 +1,6 @@
 # Calculadora Compleja
 
-Calculadora Compleja con **JavaFX **y con Maven
+Calculadora Compleja con **JavaFX** y con Maven
 
 
 
